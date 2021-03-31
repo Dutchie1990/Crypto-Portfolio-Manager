@@ -1,45 +1,109 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Crypto Investment Monitor
 
-Welcome USER_NAME,
+Access to the project: 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+LIVE: Click [here]() to access the live website. <br>
+REPO: Click [here]() to access the Github repository.
 
-## Gitpod Reminders
+# Table of Contents
+- Project Goal
+- The Five Planes of UX design
+    - Strategy
+    - Scope 
+    - Structure 
+    - Skeleton
+    - Surface 
+- Database design
+- Features
+- Technologies & Tools
+- Testing
+- Deployment
+- Credits
+    - Content
+    - Acknowledgments
+    - Used websites 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Project Goal
+Monitoring your assets is always the best thing to do as a cryptocurrency investor. For this reason, this project aims to provide a comprehensive overview of the assets which the users' holds as well the transactions made by the user. The main focus will be the P/L (profit and lost) for each asset which the user is holding compared to the actual prices. 
 
-`python3 -m http.server`
+# The Five Planes Of UX Design
 
-A blue button should appear to click: *Make Public*,
+## Strategy
+The platform's concept is to provide a comprehensive overview of currently holding crypto assets. The user are able to set up a deposit and insert their transactions. The platform combines this to a overview, with current profit and loss calculated on real time prices. In the leaderboard section of the platform the top 10 users with most profits are listed. Other users can see the crypto's in which are investing and are able to make choices based on the best performing portfolio's. 
 
-Another blue button should appear to click: *Open Browser*.
+## Scope
+The project itself is a crypto investment monitoring tool. The project consist out of different epics which work together as a whole. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Epics & Features 
+#### <strong>Login/Register</strong>
+This epic enables users or potential users to make an account and login to the platform. The user will be connected to his own assets and transactions make the platform personalized for each user. Also, the options to register a deposit or a transaction can only be made when a user is logged on to his account. Lastly, a user must be able to delete his account with all underlying assets and transactions as well. 
+#### Features 
+- Login 
+- Logout
+- Register 
+- Autorize 
 
-A blue button should appear to click: *Make Public*,
+#### <strong>Assets</strong> 
+This epic consist out off different features which are connected to the assets management of the user. The user will be able to register their asset in USD. From their they can obtain other assets by doing transactions. Those assets will be visually presented by to the user as well the unrealized profits will be shown. Also a complete valuation will be shown to the user to make them able to monitor their assets closely with real-time information.  
+#### Features 
+- Presentation
+- Deposit 
+- Withdrawal
+- Live valuation
+- Profit and Loss 
 
-Another blue button should appear to click: *Open Browser*.
+#### <strong>Transactions</strong> 
+The transactions are as well a backbone of the platform. As soon the users register their first asset in USD, they are able to register their transaction. Those transactions will be saved into the database and can be looked into. 
+#### Features 
+- Presentation
+- Transaction validation 
+- Add transaction
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### <strong>Leaderboard</strong>
+The leaderboard is a open for everyone part of the platform. The aim of this page is to inform people about the most succesfull portfolio's. The overview show the top 10 succesfull portfolio's and give an overview which assets are included in the portfolio. 
+#### Features 
+- Presentation
 
-## Updates Since The Instructional Video
+#### <strong>Error handling</strong>
+The error handling is part of defensive programming. In order to prevent the application to digest malicious data, some error handling measures are in place. Firstly, the unauthorized error, page not found error and also an internal service error. Those errors will be catched and the user will be redirected to the page, respectively. In case of an unknown exception or exception which has not their own page, the general error page will be shown. 
+#### Features 
+- Presentation 404
+- Presentation 401
+- Presentation 500
+- Presentation general
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Nice to have 
+One downside of the platform is the manual input used from the user to register their assets and transactions. It would be ideal to wire up the trading platform with the monitoring platform to automatically import the trades and assets from the user's account. But this is not in the scope of this project. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+# Structure 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The website will contain different pages as well for logged in users and not logged in users. The following tree map structure will further outline the intented structure for the website. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- ( insert picture of treemap )
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Furthermore, the portfolio is be compatible with all kind of devices. Small design changes can be expected such as omitting some data at smaller devices screens. But the main functionalities should be easy to use and understand on all devices. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+# Skeleton
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The webapp consist out of the following views: 
+- Welcome view
+- Login view
+- Register view
+- Leaderboard view (while logged in)
+- Leaderboard view (not logged in)
+- Assets view
+- Deposit/Withdrawal view
+- Transactions view
+- Add transaction view 
+- Logout view
+- 404 (page not found exception) error view 
+- 401 (unauthorized exception) error view 
+- 500 (internal server error ) error view 
+- General error view
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Desktop design
+### Tablet design
+### Mobile design
 
---------
 
-Happy coding!
+
