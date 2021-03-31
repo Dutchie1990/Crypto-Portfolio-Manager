@@ -1,14 +1,12 @@
 from flask import Flask
+from users import users
 import os
 if os.path.exists("env.py"):
     import env
 
+
 app = Flask(__name__)
-
-
-@app.route('/')
-def main():
-    return "Hello world"
+app.register_blueprint(users)
 
 
 if __name__ == "__main__":
