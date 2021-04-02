@@ -1,12 +1,18 @@
 from flask import Flask
-from users import users
+from app.controller.general import general
+from app.controller.users import users
+from app.controller.assets import assets
+from app.controller.transactions import transactions
 import os
 if os.path.exists("env.py"):
     import env
 
 
 app = Flask(__name__)
+app.register_blueprint(general)
 app.register_blueprint(users)
+app.register_blueprint(assets)
+app.register_blueprint(transactions)
 
 
 if __name__ == "__main__":

@@ -106,4 +106,7 @@ The webapp consist out of the following views:
 ### Mobile design
 
 
+https://dev.to/blankgodd/creating-a-blueprint-based-flask-app-199h
+
+
 
