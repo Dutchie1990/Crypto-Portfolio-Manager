@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/homescreen.css')}}" type="text/css">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}" type="text/css">
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
 <div id="background">
 </div>
 <div class="text-center" id="content">
-    <h1><strong>Crypto Portfolio Manager</strong></h1>
+    <h1>Crypto Portfolio Manager</h1>
     <h5>The one and only way to succesfull manage your Crypto Portfolio</h5>
     <a class="btn btn-outline-secondary btn-lg my-3" href="{{ url_for('users.register')}}" role="button">Register now!</a>
     <hr class="my-3>">

@@ -29,4 +29,8 @@ footer{
     #navbar {
         position: relative; 
     }
+
+    .container{
+    height: 90vh;
+}
 }

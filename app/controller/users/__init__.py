@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 users = Blueprint('users', __name__)
 
@@ -10,4 +10,4 @@ def login():
 
 @users.route('/register', methods=["GET", "POST"])
 def register():
-    return "Here comes the register page"
+    return render_template('register.html')
