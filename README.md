@@ -35,9 +35,17 @@ The platform's concept is to provide a comprehensive overview of currently holdi
 The project itself is a crypto investment monitoring tool. The project consist out of different epics which work together as a whole. 
 
 ### Epics & Features 
+#### <strong>Homescreen</strong>
+This epic is the entry point of the website, from here the users can navigate to the login or register page as well to the leaderboard. 
+#### Features 
+- Presentation
+- Button functionality
+
+
 #### <strong>Login/Register</strong>
 This epic enables users or potential users to make an account and login to the platform. The user will be connected to his own assets and transactions make the platform personalized for each user. Also, the options to register a deposit or a transaction can only be made when a user is logged on to his account. Lastly, a user must be able to delete his account with all underlying assets and transactions as well. 
 #### Features 
+- Presentation
 - Login 
 - Logout
 - Register 
