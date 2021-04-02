@@ -4,5 +4,5 @@ users = Blueprint('users', __name__)
 
 
 @users.route('/login', methods=["GET", "POST"])
-def index():
+def login():
     return "Here comes the login page"

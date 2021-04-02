@@ -4,5 +4,5 @@ transactions = Blueprint('transactions', __name__)
 
 
 @transactions.route('/transactions', methods=["GET", "POST"])
-def index():
+def transaction():
     return "Here comes the transactions page"

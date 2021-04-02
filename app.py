@@ -8,7 +8,8 @@ if os.path.exists("env.py"):
     import env
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='app/templates',
+            static_folder='app/static')
 app.register_blueprint(general)
 app.register_blueprint(users)
 app.register_blueprint(assets)

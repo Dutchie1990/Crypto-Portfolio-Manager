@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block styles %}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/homescreen.css')}}" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+<div id="background">
+</div>
+<div class="text-center" id="content">
+    <h1><strong>Crypto Portfolio Manager</strong></h1>
+    <h5>The one and only way to succesfull manage your Crypto Portfolio</h5>
+    <a class="btn btn-outline-secondary btn-lg my-3" href="#" role="button">Register now!</a>
+    <hr class="my-3>">
+    <p>Already signed up?</p>
+    <a class="btn btn-outline-dark" href="#" role="button">Login</a>
+</div>
+
+{% endblock %}
