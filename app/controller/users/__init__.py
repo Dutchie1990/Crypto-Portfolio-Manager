@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
+from app.helpers.password_helper import PasswordHelper
+from app.models.user_model import User
 
 users = Blueprint('users', __name__)
 
@@ -10,4 +12,9 @@ def login():
 
 @users.route('/register', methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        user = User(request.form.get('emailadress'),
+                    PasswordHelper().
+                    generateHash(request.form.get('password')))
+        print(user.saveUser())
     return render_template('register.html')
