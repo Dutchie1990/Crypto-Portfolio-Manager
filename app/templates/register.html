@@ -1,54 +1,72 @@
 {% extends "base.html" %}
 
 {% block styles %}
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}" type="text/css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}" type="text/css">
 {% endblock %}
 
 
 {% block content %}
 
-    <div id="background">
-    </div>
-    <div id="content">
+<div id="background">
+</div>
+<div id="content">
     <h1 class="text-center m-5">Register here!</h1>
-    
+
     <div class="row d-flex justify-content-center">
         <div class="col-10 col-md-8">
             <form method="POST" action="{{ url_for('users.register') }}">
                 <div class="form-group row d-flex justify-content-center">
                     <label for="email" class="col-12 col-md-3 col-form-label col-form-label"><strong>Email</strong></label>
                     <div class="col-12 col-md-6">
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-                            placeholder="Enter your Email" required>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="email" name="email"
+                                aria-describedby="validationEmailFeedback" placeholder="Enter your Email">
+                            <div id="validationEmailFeedback" class="invalid-feedback">
+                                Please enter a valid email
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row d-flex justify-content-center">
-                    <label for="firstname" class="col-12 col-md-3 col-form-label col-form-label"><strong>Password</strong></label>
+                    <label for="password"
+                        class="col-12 col-md-3 col-form-label col-form-label"><strong>Password</strong></label>
                     <div class="col-12 col-md-6">
-                        <input type="password" class="form-control" id="password" name="password"
-                            aria-describedby="passwordHelp" placeholder="Enter your password" minlength="5" maxlenght="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        <div class="input-group has-validation">
+                            <input type="password" class="form-control" id="password" name="password"
+                                aria-describedby="validationPasswordFeedback" placeholder="Enter your password">
+                            <div id="validationPasswordFeedback" class="invalid-feedback">
+                                Enter minimal 5 characters
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row d-flex justify-content-center">
-                    <label for="firstname" class="col-12 col-md-3 col-form-label col-form-label"><strong>Confirm your
+                    <label for="passwordconfirm" class="col-12 col-md-3 col-form-label col-form-label"><strong>Confirm your
                             password</strong></label>
                     <div class="col-12 col-md-6">
-                        <input type="password" class="form-control" id="passwordconfirm" name="passwordconfirm"
-                            aria-describedby="passwordconfirmHelp" placeholder="Confirm your password" minlength="5" maxlenght="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        <div class="input-group has-validation">
+                            <input has-validation type="password" class="form-control" id="passwordconfirm"
+                                name="passwordconfirm" aria-describedby="validationPasswordConfirmFeedback"
+                                placeholder="Confirm your password">
+                            <div id="validationPasswordConfirmFeedback" class="invalid-feedback">
+                                The passwords are not the same
+                            </div>
+    
+                        </div>
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center">
-                    <button class="btn btn-outline-dark col-4 col-md-3 m-2 m-md-4">Clear</button>
-                    <button type="submit" class="btn btn btn-dark col-4 col-md-3 m-2 m-md-4">Submit</button>
-                </div>
+                    <div class="row d-flex justify-content-center">
+                        <a id="clear-button" class="btn btn-outline-dark col-4 col-md-3 m-2 m-md-4" disabled>Clear</a>
+                        <button type="submit" id="submit-button" class="btn btn btn-dark col-4 col-md-3 m-2 m-md-4" disabled>Submit</button>
+                    </div>
             </form>
         </div>
     </div>
-    </div>
-   
+</div>
+
 
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/validation.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/validation.js')}}"></script>
 {% endblock %}
