@@ -15,7 +15,7 @@ window.onload = function () {
     })
     form_elements.forEach(element => element.addEventListener('change', function () {
         Validate()
-        if (email_el.value.length > 0 || password_el.value.length > 0 || passwordconfirm_el.value.length > 0){
+        if (hasValue(email_el) || hasValue(password_el) || hasValue(passwordconfirm_el)) {
             clear_button.removeAttribute("disabled")
         } else {
             clear_button.setAttribute("disabled", true)
@@ -27,8 +27,8 @@ function Validate() {
     let email_valid;
     let password_valid;
 
-    if (email_el.value.length > 0) {
-        if (!(email_el.value.length > 5) || !(email_el.value.includes('@'))) {
+    if (hasValue(email_el)) {
+        if (!(hasValue(email_el, 5)) || !(email_el.value.includes('@'))) {
             email_el.classList.add("is-invalid");
             email_valid = false;
         } else {
@@ -38,7 +38,7 @@ function Validate() {
         }
     }
 
-    if (password_el.value.length > 5 && passwordconfirm_el.value.length > 0) {
+    if (hasValue(password_el, 5) && hasValue(passwordconfirm_el)) {
         if (!(password_el.value === passwordconfirm_el.value)) {
             passwordconfirm_el.classList.add("is-invalid");
             password_valid = false;
@@ -50,10 +50,14 @@ function Validate() {
     }
 
     if (email_valid && password_valid) {
-        if (submit_button.getAttribute("disabled") === "" || submit_button.getAttribute("disabled") === "true" ) {
+        if (submit_button.getAttribute("disabled") === "" || submit_button.getAttribute("disabled") === "true") {
             submit_button.removeAttribute("disabled")
         }
     } else {
         submit_button.setAttribute("disabled", true)
     }
+}
+
+function hasValue(element, val = 0) {
+    return (element.value.length > val) ? true : false
 }
