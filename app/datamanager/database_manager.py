@@ -9,15 +9,17 @@ class Database_manager:
         self.mongo_uri = os.environ.get("MONGO_URI")
         self.db_name = os.environ.get("MONGO_DBNAME")
 
-    def save_one(self, new_object, collection, duplication):
+    def save_one(self, new_object, collection):
         db = self.connect(self, collection)
-        if not duplication:
+
+        if (collection == "users"):
             existing_user = db.find_one(
                 {"emailaddress": new_object['emailaddress']})
             if existing_user:
                 return print('user does exist proceed to login')
-            db.insert_one(new_object)
-            return print('objectsaved')
+
+        db.insert_one(new_object)
+        return print('objectsaved')
 
     @staticmethod
     def connect(self, collection):
