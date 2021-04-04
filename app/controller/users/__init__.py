@@ -1,5 +1,5 @@
 from flask import (Blueprint, render_template,
-                   request, flash)
+                   request, flash, Markup)
 from app.helpers.password_helper import PasswordHelper
 from app.models.user_model import User
 
@@ -25,5 +25,8 @@ def register():
             return render_template('welcomescreen.html', user=user)
         else:
             print(result)
-            flash("User already exist. Please proceed to login", 'error')
+            flash(Markup(
+                ''''User already exists, please <a href="/login"
+                class="alert-link">login</a>'''),
+                 'error')
     return render_template('register.html')
