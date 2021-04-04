@@ -19,9 +19,11 @@ def register():
                     generateHash(request.form.get("password")))
         result = user.saveUser()
         if (result):
-            flash('Welcome {}, You succesfully created an account'.format(
-                user.emailAdress))
-            return render_template('welcomescreen.html')
+            print(result)
+            flash('Welcome {}'.format(
+                user.emailAdress), 'success')
+            return render_template('welcomescreen.html', user=user)
         else:
-            flash("User already exist. Please proceed to login")
+            print(result)
+            flash("User already exist. Please proceed to login", 'error')
     return render_template('register.html')

@@ -10,11 +10,11 @@
 <div id="background">
 </div>
 <div id="content">
-    <h1 class="text-center m-5">Register here!</h1>
+    <h1 class="text-center m-md-5">Register here!</h1>
 
     <div class="row d-flex justify-content-center">
         <div class="col-10 col-md-8">
-            <form method="POST" action="{{ url_for('users.register') }}">
+            <form id="register-form" method="POST" action="{{ url_for('users.register') }}">
                 <div class="form-group row d-flex justify-content-center">
                     <label for="email" class="col-12 col-md-3 col-form-label col-form-label"><strong>Email</strong></label>
                     <div class="col-12 col-md-6">

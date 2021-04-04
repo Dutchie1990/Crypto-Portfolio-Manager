@@ -41,11 +41,13 @@ function Validate() {
     if (hasValue(password_el, 5) && hasValue(passwordconfirm_el)) {
         if (!(password_el.value === passwordconfirm_el.value)) {
             passwordconfirm_el.classList.add("is-invalid");
+            password_el.classList.remove('is-valid')
             password_valid = false;
         } else {
             password_valid = true;
             passwordconfirm_el.classList.remove("is-invalid")
             passwordconfirm_el.classList.add("is-valid")
+            password_el.classList.add('is-valid')
         }
     }
 

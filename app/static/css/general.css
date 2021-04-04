@@ -27,6 +27,18 @@ h1 {
     color:#A30000
 }
 
+#flashes{
+    position: relative;
+    top: 10vh;
+}
+
+.error{
+    background-color: red;
+}
+
+.success{
+    background-color: green;
+}
 
 @media (min-width: 992px) {
     h1 {

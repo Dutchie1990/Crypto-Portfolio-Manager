@@ -17,7 +17,7 @@
     <header>
         <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark">
             {% if user %}
-                <a class="navbar-brand" href="#">Daniel</a>
+                <a class="navbar-brand" href="#">{{ user.emailAdress }}</a>
             {% else %}
                 <a class="navbar-brand" href="#">Welcome</a>
             {% endif %}
@@ -40,24 +40,22 @@
                         <a class="nav-link" href="#">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="{{ url_for('users.register')}}">Register</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <section>
-        {% with messages = get_flashed_messages() %}
+    <section id="flashes" class="row" >
+        <div class="col-6">
+        {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                {% for message in messages %}
-                    <div class="row">
-                        <h4 class="text-center">
-                            {{ message }}
-                        </h4>
-                    </div>
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
                 {% endfor %}
             {% endif %}
         {% endwith %}
+        </div>
     </section>
 
     <main class="container">
