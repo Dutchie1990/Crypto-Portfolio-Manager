@@ -13,8 +13,9 @@ def login():
 @users.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        user = User(request.form.get('emailadress'),
+        user = User(request.form.get("email").lower(),
                     PasswordHelper().
-                    generateHash(request.form.get('password')))
-        print(user.saveUser())
+                    generateHash(request.form.get("password")))
+        user.saveUser()
+        return render_template('welcomescreen.html')
     return render_template('register.html')
