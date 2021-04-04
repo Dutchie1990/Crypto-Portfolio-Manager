@@ -16,10 +16,10 @@ class Database_manager:
             existing_user = db.find_one(
                 {"emailaddress": new_object['emailaddress']})
             if existing_user:
-                return print('user does exist proceed to login')
+                return False
 
         db.insert_one(new_object)
-        return print('objectsaved')
+        return True
 
     @staticmethod
     def connect(self, collection):

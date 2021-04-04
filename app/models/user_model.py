@@ -13,5 +13,5 @@ class User():
             "emailaddress": self.emailAdress,
             "password": self.password
         }
-        Database_manager().save_one(register, self.collection)
-        return "here comes the save function"
+        result = Database_manager().save_one(register, self.collection)
+        return result

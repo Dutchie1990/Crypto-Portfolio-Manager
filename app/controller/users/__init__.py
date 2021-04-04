@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request
+from flask import (Blueprint, render_template,
+                   request, flash)
 from app.helpers.password_helper import PasswordHelper
 from app.models.user_model import User
 
@@ -16,6 +17,11 @@ def register():
         user = User(request.form.get("email").lower(),
                     PasswordHelper().
                     generateHash(request.form.get("password")))
-        user.saveUser()
-        return render_template('welcomescreen.html')
+        result = user.saveUser()
+        if (result):
+            flash('Welcome {}, You succesfully created an account'.format(
+                user.emailAdress))
+            return render_template('welcomescreen.html')
+        else:
+            flash("User already exist. Please proceed to login")
     return render_template('register.html')

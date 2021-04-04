@@ -10,6 +10,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__, template_folder='app/templates',
             static_folder='app/static')
+app.secret_key = os.environ.get("SECRET_KEY")
 app.register_blueprint(general)
 app.register_blueprint(users)
 app.register_blueprint(assets)
