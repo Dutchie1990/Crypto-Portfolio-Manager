@@ -16,7 +16,7 @@ window.onload = function () {
         })
     })
     form_elements.forEach(element => element.addEventListener('change', function () {
-        Validate()
+        validate()
         if (hasValue(email_el) || hasValue(password_el) || hasValue(passwordconfirm_el) || hasValue(firstname_el)) {
             clear_button.removeAttribute("disabled")
         } else {
@@ -25,7 +25,7 @@ window.onload = function () {
     }))
 }
 
-function Validate() {
+function validate() {
     let email_valid;
     let password_valid;
     let firstname_valid;
