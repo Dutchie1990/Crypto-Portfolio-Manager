@@ -9,4 +9,4 @@ def asset():
         flash("You need to login first", "error")
         return redirect(url_for('users.login'))
     print(session['emailaddress'])
-    return render_template('welcomescreen.html', user=session['username'])
+    return render_template('assets.html', user=session['username'])
