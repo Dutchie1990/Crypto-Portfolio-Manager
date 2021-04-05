@@ -10,23 +10,11 @@
 <div id="background">
 </div>
 <div id="content">
-    <h1 class="text-center m-md-5">Register here!</h1>
+    <h1 class="text-center m-md-5">Login</h1>
 
     <div class="row d-flex justify-content-center">
         <div class="col-10 col-md-8">
-            <form id="register-form" method="POST" action="{{ url_for('users.register') }}">
-                <div class="form-group row d-flex justify-content-center">
-                    <label for="firstname" class="col-12 col-md-4 col-form-label col-form-label d-none d-md-block"><strong>Firstname</strong></label>
-                    <div class="col-12 col-md-8">
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="validationFirstnameFeedback"
-                                placeholder="Enter your Firstname">
-                            <div id="validationFirstnameFeedback" class="invalid-feedback">
-                                Please enter a valid firstname
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <form id="login-form" method="POST" action="{{ url_for('users.login') }}">
                 <div class="form-group row d-flex justify-content-center">
                     <label for="email" class="col-12 col-md-4 col-form-label col-form-label d-none d-md-block"><strong>Email</strong></label>
                     <div class="col-12 col-md-8">
@@ -52,21 +40,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group row d-flex justify-content-center">
-                    <label for="passwordconfirm" class="col-12 col-md-4 col-form-label col-form-label d-none d-md-block"><strong>Confirm your
-                            password</strong></label>
-                    <div class="col-12 col-md-8">
-                        <div class="input-group has-validation">
-                            <input has-validation type="password" class="form-control" id="passwordconfirm"
-                                name="passwordconfirm" aria-describedby="validationPasswordConfirmFeedback"
-                                placeholder="Confirm your password">
-                            <div id="validationPasswordConfirmFeedback" class="invalid-feedback">
-                                The passwords are not the same
-                            </div>
-    
-                        </div>
-                    </div>
-                </div>
                     <div class="row d-flex justify-content-center">
                         <button id="clear-button" class="btn btn-outline-dark col-4 col-md-3 m-2 m-md-4" disabled>Clear</button>
                         <button type="submit" id="submit-button" class="btn btn btn-dark col-4 col-md-3 m-2 m-md-4" disabled>Submit</button>
@@ -81,5 +54,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/validation-register.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/validation-login.js')}}"></script>
 {% endblock %}

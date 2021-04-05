@@ -8,7 +8,7 @@ users = Blueprint('users', __name__)
 
 @users.route('/login', methods=["GET", "POST"])
 def login():
-    return "Here comes the login page"
+    return render_template('login.html')
 
 
 @users.route('/register', methods=["GET", "POST"])

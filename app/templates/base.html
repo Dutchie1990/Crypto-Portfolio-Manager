@@ -30,21 +30,27 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Overview <span class="sr-only">(current)</span></a>
+                    {% if user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Assets</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Transactions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('general.index')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="{{ url_for('users.login')}}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('users.register')}}">Register</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
