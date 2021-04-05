@@ -1,5 +1,5 @@
 from flask import (Blueprint, render_template,
-                   request, flash, Markup, session)
+                   request, flash, Markup, session, redirect, url_for)
 from app.helpers.password_helper import PasswordHelper
 from app.models.user_model import User
 
@@ -8,7 +8,7 @@ users = Blueprint('users', __name__)
 
 @users.route('/login', methods=["GET", "POST"])
 def login():
-    if(session['username']):
+    if ("username" in session):
         flash("You already logged in", "error")
         return render_template("welcomescreen.html", user=session['username'])
     if request.method == "POST":
@@ -30,9 +30,9 @@ def login():
     return render_template('login.html')
 
 
-@ users.route('/register', methods=["GET", "POST"])
+@users.route('/register', methods=["GET", "POST"])
 def register():
-    if(session['username']):
+    if ("username" in session):
         flash("You already logged in", "error")
         return render_template("welcomescreen.html", user=session['username'])
     if request.method == "POST":
@@ -53,3 +53,10 @@ def register():
                 class="alert-link">login</a>'''),
                 'error')
     return render_template('register.html')
+
+
+@users.route("/logout")
+def logout():
+    flash("You have been logged out")
+    session.clear()
+    return redirect(url_for('users.login'))
