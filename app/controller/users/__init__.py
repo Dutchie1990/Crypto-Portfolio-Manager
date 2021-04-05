@@ -14,14 +14,15 @@ def login():
 @users.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        user = User(request.form.get("email").lower(),
+        user = User(request.form.get('firstname').lower(),
+                    request.form.get("email").lower(),
                     PasswordHelper.
                     generateHash(request.form.get("password")))
         result = user.saveUser()
         if (result):
             print(result)
             flash('Welcome {}'.format(
-                user.emailAdress), 'success')
+                user.firstName.capitalize()), 'success')
             return render_template('welcomescreen.html', user=user)
         else:
             print(result)
