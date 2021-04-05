@@ -15,7 +15,7 @@ def login():
 def register():
     if request.method == "POST":
         user = User(request.form.get("email").lower(),
-                    PasswordHelper().
+                    PasswordHelper.
                     generateHash(request.form.get("password")))
         result = user.saveUser()
         if (result):

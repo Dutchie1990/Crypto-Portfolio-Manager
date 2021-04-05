@@ -30,12 +30,14 @@ h1 {
 #flashes{
     position: relative;
     max-width: 80%;
-    left: 10%;
+    left: 12.5%;
     top: 10vh;
 }
 
 #flashes p{
     border-radius: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .error{

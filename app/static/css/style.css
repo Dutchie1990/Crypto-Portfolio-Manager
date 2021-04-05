@@ -9,6 +9,14 @@ body {
     z-index: 9999;
 }
 
+.navbar-brand{
+    font-size: 1rem;
+}
+
+.navbar-toggler{
+    font-size: 0.8rem;
+}
+
 .container{
     max-width: 100%;
     overflow: hidden;
