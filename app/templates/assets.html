@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/assets.css')}}" type="text/css">
 {% endblock %}
 
 
 {% block content %}
-    <div class="jumbotron">
+    <div class="jumbotron-container">
         <h1 class="text-center">Overview</h1>
-        <hr class="my-4">
+        <hr class="my-2 my-md-4">
         <div class="lead text-center">
             <p>Total deposit: <strong>5000</strong> USD </p>
             <p>Current value: <strong>75000</strong> USD </p>
-            <button id="test" class="btn btn-success">Deposit</button>
-            <button class="btn btn-danger">Withdrawal</button>
+            <button id="test" class="btn btn-success m-2">Deposit</button>
+            <button class="btn btn-danger m-2">Withdrawal</button>
+            <div class="my-2 my-md-4"></div>
         </div>
         <div class="table-responsive">
             <table id="table" class="table table-striped">
@@ -87,5 +89,6 @@
 {% endblock %}
 
 {% block scripts %}
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/assets.js')}}"></script>
 {% endblock %}

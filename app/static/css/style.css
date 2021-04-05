@@ -27,14 +27,29 @@ body {
     height: 95vh;
 }
 
-footer{
-    position: fixed;
-    width: 100%;
-    bottom:0;
-    left:0;
-    height: 5vh;
-    background-color:#343a40; 
-    color: #F4FAFF;
+h1 {
+    color:#A30000
+}
+
+#flashes{
+    position: relative;
+    max-width: 80%;
+    left: 12.5%;
+    top: 10vh;
+}
+
+#flashes p{
+    border-radius: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.error{
+    background-color: red;
+}
+
+.success{
+    background-color: green;
 }
 
 @media (min-width: 992px) {

@@ -1,0 +1,28 @@
+.container{
+    height: 100%;
+    overflow: visible;
+}
+
+.jumbotron-container{
+    position: relative;
+    top: 15vh;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    float: left;
+}
+
+.table-responsive {
+    overflow-x: hidden;
+}
+
+#table_wrapper{
+    margin-bottom: 5px;
+}
+
+@media (min-width: 992px) {
+    h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    }
+}
