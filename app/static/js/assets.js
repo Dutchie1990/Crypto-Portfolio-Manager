@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     });
 
     var element = document.getElementById("table_wrapper");
+    setElementListener()
     element.addEventListener('click', addIcon);
     addIcon();
 })

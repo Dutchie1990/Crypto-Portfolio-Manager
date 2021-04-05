@@ -22,7 +22,7 @@ def login():
                 flash("Welcome back {}".format(user.firstName), "success")
                 session['username'] = user.firstName
                 session['emailaddress'] = user.emailAdress
-                return render_template('welcomescreen.html',
+                return render_template('assets.html',
                                        user=session['username'])
             else:
                 flash("Username and/or password are incorrect", "error")
@@ -59,6 +59,6 @@ def register():
 
 @users.route("/logout")
 def logout():
-    flash("You have been logged out")
     session.clear()
+    flash("You have been logged out", 'error')
     return redirect(url_for('users.login'))

@@ -23,6 +23,7 @@ window.onload = function () {
             clear_button.setAttribute("disabled", true)
         }
     }))
+    setElementListener()
 }
 
 function validate() {
