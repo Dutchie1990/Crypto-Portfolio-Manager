@@ -8,5 +8,13 @@ def asset():
     if not ("username" in session):
         flash("You need to login first", "error")
         return redirect(url_for('users.login'))
-    print(session['emailaddress'])
+    return render_template('assets.html', user=session['username'])
+
+
+@assets.route('/deposit', methods=["POST"])
+def deposit():
+    if not ("username" in session):
+        flash("You need to login first", "error")
+        return redirect(url_for('users.login'))
+
     return render_template('assets.html', user=session['username'])
