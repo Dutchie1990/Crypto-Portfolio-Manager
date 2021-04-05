@@ -2,12 +2,12 @@ from app.datamanager.database_manager import Database_manager
 
 
 class User():
+    collection = "users"
 
     def __init__(self, firstName, emailAdress, password):
         self.firstName = firstName
         self.emailAdress = emailAdress
         self.password = password
-        self.collection = "users"
 
     def saveUser(self):
         register = {
@@ -15,5 +15,12 @@ class User():
             "emailaddress": self.emailAdress,
             "password": self.password
         }
-        result = Database_manager().save_one(register, self.collection)
-        return result
+        return Database_manager().save_one(register, self.collection)
+
+    @staticmethod
+    def findUser(emailAdress):
+        user = {
+            "emailaddress": emailAdress
+        }
+        collection = "users"
+        return Database_manager().find_one(user, collection)

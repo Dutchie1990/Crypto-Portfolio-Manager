@@ -21,6 +21,16 @@ class Database_manager:
         db.insert_one(new_object)
         return True
 
+    def find_one(self, find_object, collection):
+        db = self.connect(self, collection)
+
+        if (collection == "users"):
+            existing_user = db.find_one(
+                {"emailaddress": find_object['emailaddress']})
+            if existing_user:
+                return existing_user
+        return False
+
     @staticmethod
     def connect(self, collection):
         client = pymongo.MongoClient(self.mongo_uri)

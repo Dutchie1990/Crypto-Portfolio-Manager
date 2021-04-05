@@ -17,8 +17,6 @@ body {
     margin-right: 5px;
 }
 
-
-
 .navbar-toggler{
     font-size: 0.8rem;
 }
@@ -46,5 +44,5 @@ footer{
 
     .container{
     height: 90vh;
-}
+    }
 }

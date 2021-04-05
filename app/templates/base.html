@@ -19,8 +19,8 @@
 <body>
     <header>
         <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark">
-            {% if user %}
-                <a class="navbar-brand" href="#"><i class="fas fa-user"></i> {{ user.firstName.capitalize() }}</a>
+            {% if session.username %}
+                <a class="navbar-brand" href="#"><i class="fas fa-user"></i> {{ session.username.capitalize() }}</a>
             {% else %}
                 <a class="navbar-brand" href="#">Welcome</a>
             {% endif %}
@@ -30,7 +30,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                    {% if user %}
+                    {% if session.username %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Assets</a>
                     </li>
