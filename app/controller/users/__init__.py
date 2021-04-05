@@ -20,12 +20,10 @@ def register():
                     generateHash(request.form.get("password")))
         result = user.saveUser()
         if (result):
-            print(result)
             flash('Welcome {}'.format(
                 user.firstName.capitalize()), 'success')
             return render_template('welcomescreen.html', user=user)
         else:
-            print(result)
             flash(Markup(
                 ''''User already exists, please <a href="/login"
                 class="alert-link">login</a>'''),
