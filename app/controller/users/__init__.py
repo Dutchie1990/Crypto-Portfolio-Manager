@@ -21,6 +21,7 @@ def login():
                             existing_user['password'])
                 flash("Welcome back {}".format(user.firstName), "success")
                 session['username'] = user.firstName
+                session['emailaddress'] = user.emailAdress
                 return render_template('welcomescreen.html',
                                        user=session['username'])
             else:
@@ -45,6 +46,7 @@ def register():
             flash('Welcome {}'.format(
                 user.firstName.capitalize()), 'success')
             session['username'] = user.firstName
+            session['emailaddress'] = user.emailAdress
             return render_template('welcomescreen.html',
                                    user=session['username'])
         else:
