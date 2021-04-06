@@ -99,17 +99,24 @@
                 </div>
                 <div class="modal-body">
                     <p>Total deposit: <strong>5000</strong> USD </p>
-                    <form class="form col-10 col-md-8" action="{{ url_for('assets.deposit')}}" method="POST">
-                        <div class="row">
-                            <div class="input-group mb-3">
+                    <form class="form col-12 col-md-8" action="{{ url_for('assets.deposit')}}" method="POST">
+                        <div class="row justify-content-end">
+                            <div class="input-group has-validation mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Amount" id="amount" name="amount" placeholder="Enter your amount">
+
+                                    <input type="text" class="form-control" aria-label="Amount" id="amount" name="amount"
+                                        aria-describedby="validationAmountFeedback" placeholder="Enter your amount">
+                                    <div id="validationAmountFeedback" class="invalid-feedback">
+                                        Please enter a number
+                                    </div>
+                         
                             </div>
+                           <button id="clear-button" class="btn btn-outline-dark m-2" disabled>Clear</button>
+                            <button id="submit-button" type="submit" class="btn btn-dark m-2" disabled>Confirm</button>   
                         </div>
-                        <button type="submit" class="btn btn-success m-2">Confirm</button>
-                        <button class="btn btn-danger m-2">Clear</button>
+
                     </form>
                 </div>
             </div>
